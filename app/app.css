@@ -1,6 +1,12 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
 body{
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("https://pbs.twimg.com/media/GY-lr0vbAAANx6y.jpg");
   background-size: cover;
   font-family: 'Geist Sans', sans-serif;

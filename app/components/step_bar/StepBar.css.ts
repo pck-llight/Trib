@@ -1,4 +1,5 @@
 import {style} from "@vanilla-extract/css";
+import {recipe} from "@vanilla-extract/recipes";
 
 export const stepBarBox = style({
     display: "flex",
@@ -9,10 +10,10 @@ export const stepBarBox = style({
 });
 
 export const stepBarContainer = style({
-    width: "fit-content",
     display: "flex",
     padding: "4px",
     flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
     gap: "4px",
     borderRadius: "12px",
@@ -30,9 +31,15 @@ export const stepBarProgressBarContainer = style({
     gap: "4px",
 });
 
+export const stepBarProgressBarBack = style({
+    width: "100%",
+    background: "rgba(255, 255, 255, 0.30)",
+    borderRadius: "2px",
+});
+
 export const stepBarProgressBar = style({
     position: "relative",
-    width: "25%", //이거 나중에 값따라서 바뀌어야 함
+    width: "12%", //이거 나중에 값따라서 바뀌어야 함
     height: "4px",
     borderRadius: "4px",
     background: "linear-gradient(90deg, rgba(16, 152, 255, 0.60) 0%, #1098FF 100%)",
@@ -54,11 +61,28 @@ export const stepBarButtonContainer = style({
     gap: "4px",
 })
 
-export const stepBarButton = style ({
-    display: "flex",
-    padding: "10px 16px",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "10px",
-    color: "rgba(0, 0, 0, 0.38)",
+export const stepBarButton = recipe ({
+    base:{
+        display: "flex",
+        padding: "10px 16px",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "10px",
+        color: "rgba(0, 0, 0, 0.38)",
+        cursor: "pointer",
+        userSelect: "none",
+        borderRadius: "8px",
+        border: "1px solid rgba(0, 0, 0, 0)",
+        transition: "all 0.3s ease",
+    },
+    variants: {
+        isActive: {
+            true: {
+                border: "1px, solid rgba(255, 255, 255, 0.38)",
+                background: "rgba(255, 255, 255, 0.69)",
+                color: "#1098FF",
+            },
+            false: {}
+        },
+    },
 })
