@@ -39,9 +39,9 @@ export const stepBarProgressBarBack = style({
 
 export const stepBarProgressBar = style({
     position: "relative",
-    width: "12%", //이거 나중에 값따라서 바뀌어야 함
     height: "4px",
     borderRadius: "4px",
+    transition: "width 0.5s ease-in-out",
     background: "linear-gradient(90deg, rgba(16, 152, 255, 0.60) 0%, #1098FF 100%)",
     '::after': {
         content: "",
@@ -73,7 +73,7 @@ export const stepBarButton = recipe ({
         userSelect: "none",
         borderRadius: "8px",
         border: "1px solid rgba(0, 0, 0, 0)",
-        transition: "all 0.3s ease",
+        transition: "all 0.3s cubic-bezier(0.39, 0.09, 0.35, 1.01)",
     },
     variants: {
         isActive: {
